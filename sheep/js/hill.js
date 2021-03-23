@@ -33,9 +33,9 @@ export class Hill {
         let cur = this.points[0];
         let prev = cur ;
         
-        let dots = [];
+        let dots = []; // 양의 좌표를 찾기 위해 배열에 저장하자
 
-        ctx. moveTO(cur.x,cur.y);
+        ctx. moveTo(cur.x,cur.y);
 
 
         let prevCx = cur.x;
@@ -49,7 +49,32 @@ export class Hill {
             const cy = (prev.y + cur.y)/2;
 
             ctx.quadraticCurveTo(prev.x,prev.y,cx,cy);
+            //making curve
+
+            dots.push({
+                x1:prevCx,
+                y1:prevCy,
+                x2:prev.x,
+                y2:prev.y,
+                x3:cx,
+                y3:cy
+            });
+
+            prev = cur;
+            prevCx = cx;
+            prevCy = cy;
+
         }
+
+
+        ctx.lineTo(prev.x, prev.y);
+        ctx.lineTo(this.stageWidth, this.stageHeight);
+        ctx.lineTo(this.points[0].x , this.stageHeight);
+        ctx.fill();
+
+
+        return dots;
+
     } // draw hill on canvas
 
     getY(){

@@ -28,6 +28,11 @@ class App{
 
         this.ctx.scale(2,2);
 
+        for(let i = 0 ; i< this.hills.length ; i++){
+
+            this.hills[i].resize(this.stageWidth,this.stageHeight);
+        }
+
 
     }//canvas size *2 letina display에서도 선명하게
 
@@ -35,6 +40,13 @@ class App{
         requestAnimationFrame(this.animate.bind(this));
 
         this.ctx.clearRect(0,0,this.stageWidth,this.stageHeight);
+
+
+        let dots;
+
+        for ( let i =0 ;i < this.hills.length ; i++){
+            dots = this.hills[i].draw(this.ctx);
+        }
     } // canvas 흰색으로 초기화
 }
 
