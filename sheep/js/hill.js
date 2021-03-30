@@ -34,8 +34,22 @@ export class Hill {
         let prev = cur ;
         
         let dots = []; // 양의 좌표를 찾기 위해 배열에 저장하자
+        
 
-        ctx. moveTo(cur.x,cur.y);
+        cur.x += this.speed;
+        if( cur.x > -this.gap){
+
+            //새로운 요소를 배열의 맨 앞쪽에 추가하고, 새로운 길이를 반환합니다.
+            this.points.unshift({
+                x:-(this.gap*2),
+                y:this.getY()
+            });
+        } else if( cur.x > this.stageWidth){
+            this.points.splice(-1);
+        }
+
+        //화면에서 사라지면 배열에서 제거
+        ctx.moveTo(cur.x,cur.y);
 
 
         let prevCx = cur.x;
@@ -43,8 +57,14 @@ export class Hill {
 
 
         for (let i = 1; i < this.points.length ; i++){
-            cur = this.points[i];
 
+            if(i == this.points.length){
+                i = 0;
+            }
+            cur = this.points[i];
+            cur.x = cur.x + this.speed;
+            //가속도는?
+            //speed
             const cx = (prev.x + cur.x)/2;
             const cy = (prev.y + cur.y)/2;
 
@@ -63,6 +83,7 @@ export class Hill {
             prev = cur;
             prevCx = cx;
             prevCy = cy;
+        
 
         }
 
