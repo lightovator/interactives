@@ -10,7 +10,7 @@ export class DoggyController{
 
         };
 
-        this.img.src = "https://dovigod.github.io/interactives/doggy/image/trans_doggy.png";
+        this.img.src = "http://dovigod.github.io/interactives/doggy/image/trans_doggy.png";
         
 
         this.items = [];
