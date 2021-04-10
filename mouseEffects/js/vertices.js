@@ -73,11 +73,13 @@ class particle {
 const init =() =>{
     particleArray = [];
 
+  
+
     for(let i = 0 ; i < numberOfParticle ; i++){
         let x = Math.random() * canvas.width ;
         let y = Math.random() * canvas.height;
 
-        let size = (Math.random()*15) +10;
+        let size = (Math.random()*5) +5;
         let color = 'pink';
 
         let weight =1 ;
@@ -104,21 +106,35 @@ const connect =() =>{
             +
             ((particleArray[a].y - particleArray[b].y)*(particleArray[a].y - particleArray[b].y))
 
-            if(distance < 200){
+            if(distance < 2800){
                 opacityValue = 1 - (distance/10000);
                 ctx.strokeStyle ='rgba(255,255,255,'+`${opacityValue}` +')';
 
+
+                ctx.lineWidth = 1.5;
                 ctx.beginPath();
-                ctx.lineWidth = 1;
+
+                
                 ctx.moveTo(particleArray[a].x , particleArray[a].y);
                 //starting point
 
+                const controlX = (particleArray[a].x+particleArray[b].x)/2;
 
-                ctx.lineTo(particleArray[b].x , particleArray[b].y);
+                const controlY = (particleArray[a].y+particleArray[b].y)/2;
+                //문제점 == 같은 위치일때 컨트롤이 +20 대서 문제
+            
+                ctx.quadraticCurveTo(controlX,
+                controlY,
+                particleArray[b].x ,
+                 particleArray[b].y);
 
+
+             
 
                 ctx.stroke();
                 //connecting
+
+              
             }
         }
     }
@@ -126,15 +142,27 @@ const connect =() =>{
 const animate =()=>{
 
   
-  
     ctx.clearRect(0,0,canvas.width,canvas.height);
+
+
+  
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(255,100,100,0)';
+ 
+    ctx.moveTo(300, 300);
+    ctx.quadraticCurveTo(70, 80, 100, 100);
+
+    ctx.stroke();
     for(let i = 0; i < particleArray.length ; i++){
         particleArray[i].update();
-        connect();
+       
     }
 
     
 
+    connect();
+
+    
     requestAnimationFrame(animate);
 
 }

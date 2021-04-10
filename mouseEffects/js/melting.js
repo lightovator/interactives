@@ -8,7 +8,7 @@ canvas.height = window.innerHeight;
 
 let particleArray = [];
 //will hold all of particle object
-const numberOfParticle = 200;
+const numberOfParticle = 1000;
 // get mouse position
 
 const mouse = {
