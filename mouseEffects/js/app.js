@@ -65,7 +65,7 @@ class particle {
             this.weight = (Math.random() * 2) - 0.5;
         }
 
-        this.y += this.weight;
+        this.y += this.weight; 
         this.weight += 0.2;
 
         if((this.y > canvas.height - this.size) && (this.weight > 0.5)){

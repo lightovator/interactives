@@ -42,7 +42,7 @@ window.addEventListener("mouseleave", (event) =>{
 
 ctx.font = '30px Verdana';
 ctx.fillStyle = 'white';
-ctx.fillText('HODU', 0 , 30);
+ctx.fillText('MONG', 0 , 30);
 //ctx.strokeStyle = 'white';
 
 //ctx.strokeRect(0,0,100,100);
@@ -53,8 +53,6 @@ const textCoordinates = ctx.getImageData(0,0, 100, 100);
 
 class Particle{
 
-
-    static C = 'rgba(0,255,255)';
     constructor(x, y){
         this.x = x + 100;
         this.y = y;
@@ -190,10 +188,12 @@ const connect = () => {
         let distance = Math.sqrt((dx*dx) + (dy*dy));
 
         if(distance <20){
-            opacityValue = 1 - ( distance/50);
+            opacityValue = 1 - ( distance/40);
 
 
-            lineColor =  mdistance < mouse.radius && mdistance > mouse.radius-50 ? 'rgba(0,255,255,'+opacityValue+ ')':'rgba(255,255,255,'+opacityValue+ ')';
+            //lineColor =  mdistance < mouse.radius && mdistance > mouse.radius-50 ? 'rgba(0,255,255,'+opacityValue+ ')':'rgba(255,255,255,'+opacityValue+ ')';
+
+            lineColor = mdistance > mouse.radius ? 'rgba(255,255,255,'+opacityValue+ ')' : 'rgba(0,255,255,'+opacityValue+ ')';
             ctx.strokeStyle = lineColor;
             ctx.lineWidth = 2;
             ctx.beginPath();
