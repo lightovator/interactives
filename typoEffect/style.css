@@ -23,9 +23,9 @@ canvas{
 
 #canvas1{
     border: 2px solid white;
-    top: 50%;
-    left: 50%;
-    transform: tanslate(-50%,-50%);
-    width: 322px;
-    height: 282px;;
+   
+    transform: rotate(-50%,-50%);
+   
+    width: 740px;
+    height: 845px;
 }
