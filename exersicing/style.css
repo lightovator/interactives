@@ -7,7 +7,7 @@
 
 
 html{
-    cursor: none;
+  
 }
 body{
     background-color: black;
@@ -19,7 +19,7 @@ h1{
 
 
 .cursor_item{
-    position: relative;
+    position: absolute;
 
     width: 100px;
     height: 100px;
