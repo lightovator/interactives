@@ -26,6 +26,6 @@ canvas{
    
     transform: rotate(-50%,-50%);
    
-    width: 740px;
-    height: 845px;
+    width: 100%;
+    height: 100%;
 }
