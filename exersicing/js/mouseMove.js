@@ -1,64 +1,119 @@
+
+ let h1 = document.getElementsByTagName("h1")[0];
+
+ const human = document.getElementsByClassName('mid_human')[0];
+
+ const backGround = document.getElementsByClassName('background_blur')[0];
+
+
+ const beer = document.getElementsByClassName('beer')[0];
+
+ const moon = document.getElementsByClassName('moon')[0];
+
 window.onload = () =>{
-
-    let h1 = document.getElementsByTagName("h1")[0];
-
-    let cursor_div = document.getElementsByClassName('cursor_item')[0];
-
-
-    const mouse = {
-        x: 0,
-        y: 100,
-        mx: 0,
-        my: 0,
-        speed: 0.03
-    };
-
-    const lineSizeV = cursor_div.offsetWidth;
-    const lineSizeH = cursor_div.offsetHeight;
-
    
 
+    const mouse = { 
+        x: 0,
+        y: 0,
+        mx: 0,
+        my: 0,
+        speed: 0.003
+    };
+
+    basicPositionSettingMid();
+   
+    imageRatio(backGround);
+    basicPositionSettingBackGround();
+
+    console.log(backGround.offsetHeight);
+    window.addEventListener("mousemove", (e) =>{
 
 
-    window.addEventListener("click", (e) =>{
-
-
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-        cursor_div.style.top = `${mouse.y}px`;
-
-        cursor_div.style.left = `${mouse.x}px`;
-        
+        mouse.x = e.clientX - window.innerWidth/2;
+        mouse.y = e.clientY - window.innerHeight/2;
+        loop();
+    
+        //원점을 중앙에 놓는 거!!! 중요!!!
     })
-    /*
+    
+  
+
+    let blurValue =0;
+
+
+
+    beerEffect();
+
+
     const loop =() =>{
+        mouse.mx += (mouse.x-mouse.mx)*mouse.speed;
+        mouse.my += (mouse.y-mouse.my)*mouse.speed;
 
+        h1.innerHTML = `x:${mouse.x} mx:${mouse.mx}`;
+
+
+        human.style.transform = 'translate(' +(-mouse.mx/6) + 'px,' + (-mouse.my/6) + 'px)';
+        backGround.style.transform = 'translate(' +(mouse.mx/8) +'px)';
+
+        moon.style.transform = 'translate(' +(-mouse.mx/15) + 'px,' + (-mouse.my/19) + 'px)';
         
-      
-
-        mouse.mx += (mouse.x-lineSizeH/2-mouse.mx)*mouse.speed;
-        mouse.my += (mouse.y-lineSizeH/2-mouse.my)*mouse.speed;
-
-        // 조금씩 작은 수를 더해주어 볼록 곡선 속도 그래프 형태
-
-        h1.innerHTML = `x:${mouse.mx} y:${mouse.my}`;
-        /*
-        cursor_div.style.transform = 'translate(' + mouse.mx + 'px,' + mouse.my + 'px)';*/
-
-/*
-        cursor_div.style.top = `${mouse.my}px`;
-
-        cursor_div.style.left = `${mouse.mx}px`;
-
+        
+        blurValueMoon = mouse.mx /15 ;
+        moon.style.filter = `blur(${blurValueMoon}px)`;
+        
+        
+ 
 
         window.requestAnimationFrame(loop);
         
 
     }
 
-    loop();
-*/
+   
 
 
+
+
+}
+
+
+
+const basicPositionSettingBackGround = () =>{
+
+    backGround.style.left = `${window.innerWidth/2 - backGround.offsetWidth/2}px`;
+
+
+
+
+}
+
+const basicPositionSettingMid = () =>{
+
+
+    human.style.top = `${window.innerHeight/2 - human.offsetHeight/2}px`;
+
+    
+}
+
+
+const imageRatio = (content) =>{
+    const width = content.offsetWidth;
+    const height = content.offsetHeight;
+    const windowSize = {
+        width : window.innerWidth,
+        height: window.innerHeight
+    }
+    const ratio = width/ height;
+
+    console.dir(content);
+
+    
+
+    console.log(content.width);
+    content.height = `${windowSize.width / ratio}`;
+    content.width = `${windowSize.width+200}`;
+
+    console.log(content.offsetHeight);
 
 }
