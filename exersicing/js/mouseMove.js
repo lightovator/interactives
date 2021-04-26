@@ -18,30 +18,37 @@ window.onload = () =>{
 
    
 
-    window.addEventListener("mousemove",(e)=>{
+
+
+    window.addEventListener("click", (e) =>{
+
 
         mouse.x = e.clientX;
         mouse.y = e.clientY;
+        cursor_div.style.top = `${mouse.y}px`;
 
+        cursor_div.style.left = `${mouse.x}px`;
         
-  
-    
     })
-
-    
+    /*
     const loop =() =>{
 
         
       
 
         mouse.mx += (mouse.x-lineSizeH/2-mouse.mx)*mouse.speed;
-        mouse.my += (mouse.y-lineSizeV/2-mouse.my)*mouse.speed;
+        mouse.my += (mouse.y-lineSizeH/2-mouse.my)*mouse.speed;
 
         // 조금씩 작은 수를 더해주어 볼록 곡선 속도 그래프 형태
 
         h1.innerHTML = `x:${mouse.mx} y:${mouse.my}`;
-        cursor_div.style.transform = 'translate(' + mouse.mx + 'px,' + mouse.my + 'px)';
+        /*
+        cursor_div.style.transform = 'translate(' + mouse.mx + 'px,' + mouse.my + 'px)';*/
 
+/*
+        cursor_div.style.top = `${mouse.my}px`;
+
+        cursor_div.style.left = `${mouse.mx}px`;
 
 
         window.requestAnimationFrame(loop);
@@ -50,7 +57,7 @@ window.onload = () =>{
     }
 
     loop();
-
+*/
 
 
 
