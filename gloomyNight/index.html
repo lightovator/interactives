@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+
+    <canvas id="c1"></canvas>
+    <canvas id="c2"></canvas>
+
+    <div id="player"></div>
+    <!--<iframe id="player" width="560" height="315" src="https://www.youtube.com/embed/WnRY2GkuKOI?controls=1&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>>-->
+    <div class="image_collector">
+        <img src="./image/yellowArrow.png" alt="r-arrow" class="arrow yellowArrow">
+        <img src="./image/beer.png" alt="" class="beer">
+        <img src="./image/music.png" alt="" class="music">
+        <img src="./image/left_arrow.png" alt="l-arrow" class="arrow left_arrow">
+        <img src="./image/darkWall.jpeg" alt="background_blur" class="background_blur">
+
+    </div>
+
+  
+    
+ 
+    <img src="./image/blur_human.png" alt="mid_human" class="mid_human">
+   
+    <img src="./image/love.png" alt="love" class="love">
+    
+    <img src="./image/moon.png" alt="moon" class="moon">
+
+<!--
+    <script>
+        // 2. This code loads the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+  
+        tag.src = "http://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  
+        // 3. This function creates an <iframe> (and YouTube player)
+        //    after the API code downloads.
+        var player;
+        function onYouTubeIframeAPIReady() {
+          player = new YT.Player('player', {
+            height: '360',
+            width: '640',
+            videoId: 'WnRY2GkuKOI',
+            playerVars: {
+                'autoplay': 1,
+                'loop': 1,
+                'mute': 1 // N.B. here the mute settings.
+            },
+            events: {
+              'onReady': onPlayerReady,
+              'onStateChange': onPlayerStateChange
+            }
+          });
+
+        }
+  
+        const myBeer = document.getElementsByClassName('beer')[0];
+        // 4. The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+            console.dir(event);
+            event.target.playVideo();
+            console.log(222);
+            
+            myBeer.addEventListener('mousemove', (e)=>{
+                event.target.mute = 0;
+
+                event.target.playVideo();
+                console.log(1123123);
+              
+
+            });
+
+          
+        }
+        // 5. The API calls this function when the player's state changes.
+        //    The function indicates that when playing a video (state=1),
+        //    the player should play for six seconds and then stop.
+        var done = false;
+        function onPlayerStateChange(event) {
+          if (event.data == YT.PlayerState.PLAYING && !done) {
+            setTimeout(stopVideo, 6000);
+            done = true;
+          }
+        }
+        function stopVideo() {
+          player.stopVideo();
+        }
+      </script>-->
+
+    <script src="./js/mouseMove.js"></script>
+ 
+  
+    <script src="./js/vokes.js"></script>
+  
+   
+</body>
+</html>

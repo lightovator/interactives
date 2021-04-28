@@ -1,0 +1,130 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    /*height: 10000px;*/
+   
+    overflow-x: hidden;
+   /** padding: 0 50px 0 50px;*/
+    animation: loadings 0.3s ease;
+
+}
+
+
+#test{
+
+    position: fixed;
+    top:0;
+    left: 0;
+}
+
+.img_container{
+    position: fixed;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    
+}
+
+.img{
+    
+    width: 100%;
+    height: 700px;
+    opacity: 0.8;
+    animation: loadingImg 0.3s ease;
+    z-index: 0;
+    background-image: url('.././image/childern.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;   
+    background-position: center center;
+    background-color: black;
+
+}
+
+.title{
+    position: absolute;
+    color: white;
+    font-weight: 400;
+    font-size: 50px;
+    animation: loadings 0.3s ease;
+}
+
+.progressBar{
+    position: fixed;
+    width: 4px;
+    height: 140px;
+    
+    top: calc(50% - 70px);
+    left: 20px;
+    border-radius: 5px;
+    background-color: black;
+    transition : all 0.5s ease-in;
+    animation: loadings 0.3s ease;
+
+}
+
+.status{
+  
+    height: 0;
+    width: 4px;
+    background: rgb(243, 213, 79);
+    z-index: 11;
+    border-radius: 5px;
+}
+
+
+.dc_container{
+    position: relative;
+    margin-top: 600px;
+    padding: 0 250px ;
+    padding-top: 50px;
+    animation: loadings 0.3s ease;
+    z-index: 1;
+    
+}
+
+p{
+    
+    color: #555;
+    font-size: 30px;
+}
+section{
+    background-color: #efefef;
+    
+}
+
+@keyframes loadings{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes loadingImg{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0.8;
+    }
+}
+
+
+
+.fuck{
+    background-color: black;
+    height: 500px;
+    margin-top: 300px;
+}

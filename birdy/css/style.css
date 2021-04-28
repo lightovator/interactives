@@ -1,0 +1,54 @@
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow: hidden;
+    
+}
+
+img{
+    position: absolute;
+}
+
+.vod{
+    position: absolute;
+    width: 500px;
+    left: calc(50%);
+    top: calc(100px);
+}
+
+video{
+    width: 500px;
+    height: auto;
+
+    
+}
+
+
+img:first-child{
+    top: 10%;
+    left: 10%;
+
+}
+
+img:nth-child(2){
+    top: 30%;
+    left: 70%;
+}
+
+img:nth-child(3){
+    top: 30%;
+    left: 70%;
+}
+
+
+img:nth-child(4){
+    top: 30%;
+    left: 70%;
+}
+
