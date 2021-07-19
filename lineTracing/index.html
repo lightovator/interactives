@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>line Tracing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <main id="main">
+ 
+
+        <div class="line-tracer" ></div>
+        
+        <svg class="line-background" 
+         width = '100vw' height ='5000'
+         preserveAspectRatio="xMaxYMax meet"
+        >
+            <path class="line-set"
+            stroke = '#f0cf01'
+            stroke-width = '5'
+            stroke-linecap = 'round'
+            d = 'M 500 20 
+            c -300 100 -400 300  -200 500
+            c -50 30, -100 200 100 300
+            c 300 380 400 600  100 900
+            c -200 300 -400 600 -50 900
+            c 100 200 200 300 50 500
+            c -100 200 -200 300 -50 500
+            v 400'
+            fill ='none'
+            />
+
+        </svg>
+        
+    </main>
+    
+    <script src="./tracing.js"></script>
+</body>
+</html>

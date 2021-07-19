@@ -1,0 +1,19 @@
+.line-set{
+    opacity: 0.5;
+}
+.line-tracer{
+    background-color: blue;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    border-radius: 100%;
+/* 
+
+    offset-path: path('M 500 20 c -300 100 -400 300  -200 500c -50 30, -100 200 100 300c 300 380 400 600  100 900c -200 300 -400 600 -50 900c 100 200 200 300 50 500c -100 200 -200 300 -50 500'); */
+    /* transform :translate(411.2718505859375px,834.3276977539062px); */
+    
+  }
+
+  body{
+      overflow-x: hidden;
+  }

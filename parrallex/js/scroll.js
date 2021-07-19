@@ -26,6 +26,8 @@ const scrollEvent = e =>{
 
 
     pgStatus.style.height = per + '%';
+
+    console.log(pgStatus.style.height);
   
 
     text.innerHTML = `${per} `+ scroll +' '+ documentH +' '+ (documentH-windowH);
@@ -65,11 +67,10 @@ var height = Math.max( body.scrollHeight, body.offsetHeight,
 
 console.log( scroll ,window.innerHeight , window.outerHeight);
 
-  
-
-
-
 }
+
+
+
 window.addEventListener('scroll',scrollEvent);
 window.addEventListener('resize',resize);
 
