@@ -105,9 +105,21 @@ const animate =()=>{
 
     requestAnimationFrame(animate);
 
+
 }
 
 
 
 init();
 animate();
+
+
+
+const clock = (potato) => {
+
+    if(typeof potato === 'string'){
+        console.log(true);
+    }else{
+        console.log(false);
+    }
+}

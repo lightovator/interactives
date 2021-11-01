@@ -1,0 +1,45 @@
+
+
+.hello{
+    width:300px;
+    height: 300px;
+    
+    border-radius: 5px;
+    box-shadow: 3px 6px black;
+    margin-bottom: 10px;
+    animation: fadein 3s ease;
+    background: linear-gradient(1turn, #3f87a6, #ebf8e1, #60db0e);
+    filter: contrast(1.75);
+    
+}
+.hello:hover{
+    opacity: 0.6;
+
+}
+
+.hello:active{
+    box-shadow: none;
+}
+
+
+@keyframes fadein{
+    0%{
+        opacity: 0;
+        transform: translateX(500px) rotate(360deg);
+        width: 1000px;
+        border-radius: 50%;
+
+    }
+
+    50%{
+        transform: translateY(500px);
+        width: 100px;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0) translateY(0) rotate(0deg);
+        width: 300px;
+        border-radius: 10px;
+        
+    }
+}
